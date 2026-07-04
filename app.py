@@ -112,14 +112,35 @@ with tab3:
 with tab4:
     st.subheader("Qu'est-ce qui me fait vraiment gagner ?")
     st.caption("Deux modèles : un explicatif (stats in-game → associations) et un prédictif honnête (features connues AVANT le match — pas de data leakage).")
+    LABELS = {
+        "kd": "Ratio K/D (efficacité kills/morts)",
+        "deaths": "Nombre de morts",
+        "hs_pct": "% de tirs à la tête (précision)",
+        "kills": "Nombre de kills",
+        "assists": "Nombre d'assists",
+        "hour": "Heure de la journée",
+        "match_in_session": "Fatigue (n° du match dans la session)",
+    }
     try:
         imp = pd.read_csv("data/clean/feature_importance.csv")
+        imp["feature"] = imp["feature"].map(LABELS).fillna(imp["feature"])
+        imp["importance"] = imp["importance"] * 100
         fig_i = px.bar(
-            imp.sort_values("importance"), x="importance", y="feature",
-            orientation="h", title="Facteurs associés à mes victoires (modèle explicatif)",
+            imp.sort_values("importance"),
+            x="importance", y="feature", orientation="h",
+            title="Poids de chaque facteur dans mes victoires (modèle explicatif — total = 100 %)",
             color_discrete_sequence=[ROUGE],
+            text=imp.sort_values("importance")["importance"].map(lambda v: f"{v:.1f} %"),
         )
+        fig_i.update_traces(textposition="outside")
+        fig_i.update_xaxes(title="Importance (%)", ticksuffix=" %")
+        fig_i.update_yaxes(title="")
         st.plotly_chart(fig_i, width="stretch")
+        st.caption(
+            "Lecture : le modèle (Random Forest, accuracy 72,6 % en validation croisée) mesure la part de chaque facteur "
+            "dans la distinction victoire/défaite. Insight clé : le ratio K/D et les morts pèsent plus que les kills — "
+            "**survivre compte davantage que fragger**. Association ≠ causalité."
+        )
     except FileNotFoundError:
         st.info("La couche IA arrive en v2 — lance src/ml.py pour générer les résultats.")
 
