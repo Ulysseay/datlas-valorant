@@ -3,7 +3,7 @@
 **[▶️ Dashboard live](https://datlas-valorant.streamlit.app)** · Épisode 2 de la série [Datlas](https://datlas-ulysse.streamlit.app)
 
 ## La question
-Après 5 ans de Valorant (pic : Immortal 3) et **1 142 matchs compétitifs** analysés : **qu'est-ce qui me fait vraiment gagner ?**
+Après 5 ans de Valorant (pic : Radiant) et **1 142 matchs compétitifs** analysés : **qu'est-ce qui me fait vraiment gagner ?**
 Trois hypothèses testées : « je gagne parce que je frag » · « je perds quand j'enchaîne » · « j'ai des maps à bannir ».
 
 ## 3 découvertes
