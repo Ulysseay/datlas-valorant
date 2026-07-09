@@ -1,0 +1,22 @@
+{
+  "name": "Datlas Valorant",
+  "dataColors": ["#FF4655", "#53DDF0", "#ECE8E1", "#768079"],
+  "background": "#0F1923",
+  "foreground": "#ECE8E1",
+  "tableAccent": "#FF4655",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#1C2733" } }, "transparency": 0 }],
+        "title": [{ "fontColor": { "solid": { "color": "#ECE8E1" } } }],
+        "labels": [{ "color": { "solid": { "color": "#ECE8E1" } } }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#0F1923" } }, "transparency": 0 }],
+        "outspace": [{ "color": { "solid": { "color": "#0F1923" } }, "transparency": 0 }]
+      }
+    }
+  }
+}

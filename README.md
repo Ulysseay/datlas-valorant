@@ -35,5 +35,10 @@ streamlit run app.py
 - Association ≠ causalité : le modèle A décrit, il ne prouve pas.
 - v2 envisagée : détail par round (endpoint match v4), comparaison à la meta pro.
 
+## Version Power BI
+Le même dataset, exploré dans Power BI (mesures DAX, slicers, thème custom) — fichier [`datlas_valorant.pbix`](datlas_valorant.pbix).
+
+![Dashboard Power BI](assets/powerbi_dashboard.png)
+
 ---
 *[Ulysse Ayivi](https://www.linkedin.com/in/ulysseayivi/) — Data Analyst · Python, SQL, Power BI. Données : API HenrikDev, non affiliée à Riot Games.*
